@@ -22,6 +22,7 @@ def test_buy_product():
     options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(options=options, service=ChromeService(ChromeDriverManager().install()))
 
+
     print("start test")
 
     clothes = Home_page(driver)
@@ -30,11 +31,11 @@ def test_buy_product():
     mp = Clothes_page(driver)
     mp.select_products()
 
-    cp = Cart_page(driver)
-    cp.product_confirmation()
-
     p = Product_card_page(driver)
     p.product_basket()
+
+    cp = Cart_page(driver)
+    cp.product_confirmation()
 
     d = Decoration_page(driver)
     d.decoration_select()
